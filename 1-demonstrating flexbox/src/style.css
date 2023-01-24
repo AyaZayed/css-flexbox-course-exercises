@@ -1,9 +1,11 @@
 /* using border-box model -- see https://frontendmasters.github.io/bootcamp/layout#box-model-types for explanation */
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-*, *::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 /* turn off margin/padding, set font and size for the page */
 body {
@@ -20,11 +22,20 @@ ul {
   border: 10px dotted #9b2226;
   width: 900px;
   height: 500px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 /* set a border and background color to see each LI. Min-width and min-height are not necessarily a good idea in flexbox, but they are needed for the demo to better see the properties work. */
 li {
   border: 2px solid #001219;
   background-color: #ee9800;
-  min-width: 100px;
   height: 100px;
+  flex-basis: 15%;
+}
+
+.flex2 {
+  order: 2;
 }
