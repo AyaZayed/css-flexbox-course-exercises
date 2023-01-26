@@ -31,6 +31,7 @@ body {
   background-color: #dbe5de;
   padding: 0;
   margin: 0;
+  color: var(--color1);
 }
 
 section {
@@ -42,7 +43,21 @@ section {
 section h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  padding-left: 100px;
+}
+
+#mission {
+  margin-bottom: 4rem;
+}
+
+#mission .content .mission-img {
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+#mission .content p {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 #collections .row {
@@ -50,6 +65,7 @@ section h2 {
   flex-flow: row wrap;
   gap: 2%;
   list-style: none;
+  padding-left: 0;
 }
 
 #collections .row li {
@@ -105,6 +121,38 @@ section h2 {
   font-weight: 500;
 }
 
+footer {
+  background-color: var(--color5);
+  padding: 1rem 3rem;
+  display: flex;
+  font-weight: 700;
+  flex-flow: column wrap;
+}
+
+footer .social {
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 1rem;
+}
+
+footer .social h3 {
+  font-weight: 800;
+}
+
+footer .social ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+footer address {
+  flex-basis: 100%;
+  font-size: 1.05rem;
+  font-style: normal;
+}
+
 /* Initial mobile layout: a series of images stacked on top of each other with the figure caption over the image. */
 
 /* At this breakpoint, transition to 2 figures per line */
@@ -113,12 +161,55 @@ section h2 {
   #collections .row li {
     flex-basis: 49%;
   }
+
+  #mission .content .mission-img {
+    height: 200px;
+    float: left;
+    shape-outside: polygon(
+      35.84% 94.87%,
+      34.64% 87.05%,
+      51.64% 4.06%,
+      55.1% 2.38%
+    );
+  }
+
+  footer {
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  footer .social {
+    flex-basis: 50%;
+    margin-bottom: 0;
+  }
+
+  footer address {
+    flex-basis: 50%;
+  }
 }
 
 /* At this breakpoint, transition to 3 figures per line */
 
 @media (min-width: 800px) {
+  section h2 {
+    padding-left: 100px;
+  }
   #collections .row li {
     flex-basis: 32%;
+  }
+  #mission .content {
+    overflow: auto;
+  }
+  #mission .content p {
+    width: 70%;
+  }
+  footer .social {
+    flex-basis: 33%;
+    align-items: center;
+  }
+
+  footer address {
+    flex-basis: 66%;
+    padding-left: 3rem;
   }
 }
